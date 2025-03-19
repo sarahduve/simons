@@ -47,7 +47,7 @@ python manage.py runserver
 ```
 
 ## Step 5: Test Web UI
-Navigate to `http://127.0.0.1:8000/nucleotide/search/?pattern=(AATCGA|GGCAT)`
+Navigate to http://127.0.0.1:8000/nucleotide/search/?pattern=(AATCGA|GGCAT)
 and replace (AATCGA|GGCAT) as desired. To paginate through results, click the
 "next" and "previous" links
 
@@ -81,6 +81,7 @@ multiple concurrent requests also often led to slower performance (I benchmarked
 the storage and pattern searching of the large sequence. I then opted to
 download the nucleotide specified in the cli command to a file for simplicity
 (and to finish part 2 in time).
+
 For a real project I'm sure I would have created a nucleotide model and stored in
 Postgres in order to utilize full text search (or Postgres + Elasticsearch) I also would have likely used
 Celery in order to handle the larger sequence retrieval and processing in the
