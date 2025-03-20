@@ -82,20 +82,20 @@ the storage and pattern searching of the large sequence. I then opted to
 download the nucleotide specified in the cli command to a file for simplicity
 (and to finish part 2 in time).
 
-For a real project I'm sure I would have created a nucleotide model and stored in
-Postgres in order to utilize full text search (or Postgres + Elasticsearch) I also would have likely used
+For a real project, I'm sure I would have created a nucleotide model and stored in
+Postgres in order to utilize full-text search (or Postgres + Elasticsearch) I also would have likely used
 Celery in order to handle the larger sequence retrieval and processing in the
-background to avoid rate limiting issues via automatic retries and
+background to avoid rate-limiting issues via automatic retries and
 exponential backoff, but I'm sure I would also have an API key in order to avoid
-the public API's 3 second rate limit. In order to benefit from this
+the public API's 3-second rate limit. In order to benefit from this
 in part 1 however, I probably would have had to move away from the simplicity of
 the DRF API ui in order to notify the user that a nucleotide was ready for
-searching (although Celery's Flower could be use for tracking in a pinch). I
+searching (although Celery's Flower could be used for tracking in a pinch). I
 also wanted to do a simple visual representation of where the individual pattern
-results occured in the sequence, but I didn't get to it. If users frequently search for the same pattern in the same nucleotide, I would also consider caching the results.
+results occurred in the sequence, but I didn't get to it. If users frequently search for the same pattern in the same nucleotide, I would also consider caching the results.
 
 ## Package decisions
-* DRF for the simplicity of the built-in API UI, including pagination
-* tqdm for to make up for the long download times of the large sequence without
+* [DRF](https://www.django-rest-framework.org/) - for the simplicity of the built-in API UI, including pagination
+* [tqdm](https://github.com/tqdm/tqdm) - to make up for the long download time of the large sequence via cli without
   any user feedback
 
